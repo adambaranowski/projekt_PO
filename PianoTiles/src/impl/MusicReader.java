@@ -17,23 +17,11 @@ public class MusicReader implements Reader{
         FileReader fileReader = new FileReader(fileName);
         BufferedReader bufferedReader = new BufferedReader(fileReader);
 
-        song.add(bufferedReader.readLine());
-        String line;
-
-        /*Song format must be as follow:
-        #Song1#120
-
-        #40#4
-
-        #41#4
-        ......
-         */
-        //zapytać Pana Rapacza czemu nie działa
-
-        while ((line = bufferedReader.readLine()) != null){
-            line = bufferedReader.readLine();
+        
+        String line = bufferedReader.readLine();
+        while (line != null){
             song.add(line);
-           // song.add(bufferedReader.readLine());
+            line = bufferedReader.readLine();
         }
         bufferedReader.close();
         fileReader.close();

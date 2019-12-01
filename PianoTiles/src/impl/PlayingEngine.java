@@ -14,19 +14,17 @@ public class PlayingEngine {
         MusicReader musicReader = new MusicReader("src/impl/Song1.txt");
 
 
-        // testowanie
+
         try{musicReader.readSong();}
         catch (Exception e){
             System.out.println("nie działa");
         }
 
-
-        //testowanie
-        List<String> piosenka  = musicReader.getSong();
-        System.out.println(piosenka);
-        for (String linia: piosenka
+        List<String> song  = musicReader.getSong();
+        System.out.println(song);
+        for (String line: song
              ) {
-            System.out.println(linia);
+            System.out.println(line);
 
         }
 
