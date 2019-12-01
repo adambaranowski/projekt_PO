@@ -12,6 +12,10 @@ public class MusicReaderTest {
 
     @Test
     public void getSong(){
+
+        //testing getSong and readSong from a file
+        
+
         MusicReader musicReader = new MusicReader("src/impl/Song1.txt");
         try{musicReader.readSong();}
         catch (IOException e){}
