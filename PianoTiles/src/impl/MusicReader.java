@@ -17,7 +17,7 @@ public class MusicReader implements Reader{
         FileReader fileReader = new FileReader(fileName);
         BufferedReader bufferedReader = new BufferedReader(fileReader);
 
-        
+
         String line = bufferedReader.readLine();
         while (line != null){
             song.add(line);
