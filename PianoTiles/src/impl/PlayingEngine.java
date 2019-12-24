@@ -9,20 +9,9 @@ public class PlayingEngine {
     public static void main(String[] args) throws InterruptedException, UnsupportedAudioFileException, LineUnavailableException, IOException {
 
 
-        //musicReader class needs constructor
-        // ==> new MusicReader("src/impl/Song1.txt")
-        // or
-        // ==> new MusicReader()
-        // musicreader.setFileName(fileName)
+        MusicReader musicReader = new MusicReader("src/impl/BACH_PRELUDE.txt");
+        KeyMap keyMap = new KeyMap();
 
-        MusicReader musicReader = new MusicReader("src/impl/Song1.txt");
-
-
-
-      //  /try{musicReader.readSong();}
-        //catch (Exception e){
-        //    System.out.println("nie działa");
-        //}
 
         List<String> song  = musicReader.getSong();
         System.out.println(song);
@@ -30,8 +19,6 @@ public class PlayingEngine {
              ) {
             System.out.println(line);
         }
-
-
 
         MusicPlayer musicPlayer = new MusicPlayer();
         musicPlayer.playSound("081-a.wav", 1000);

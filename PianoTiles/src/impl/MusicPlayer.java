@@ -3,10 +3,8 @@ package impl;
 import javax.sound.sampled.*;
 import java.io.File;
 import java.io.IOException;
-import java.util.Timer;
 
 public class MusicPlayer {
-
 
     void playSound(String soundFile, int time) throws IOException, LineUnavailableException, UnsupportedAudioFileException, InterruptedException {
 
@@ -17,6 +15,5 @@ public class MusicPlayer {
         clip.start();
         Thread.sleep(time);
         clip.stop();
-
     }
 }
