@@ -46,11 +46,17 @@ public class MusicReader implements Reader{
 
     //CONSTRUCTOR
 
-    public MusicReader(String fileName) {
+    public MusicReader(String fileName) throws IOException {
+
         this.fileName = fileName;
+        try{
+        readSong();}
+        catch (Exception e){System.out.println("nie działa");}
+
     }
 
     public MusicReader(){
+
     }
 
 }

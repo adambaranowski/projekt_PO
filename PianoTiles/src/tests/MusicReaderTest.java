@@ -11,14 +11,14 @@ import java.util.List;
 public class MusicReaderTest {
 
     @Test
-    public void getSong(){
+    public void getSong() throws IOException {
 
         //testing getSong and readSong from a file
 
 
         MusicReader musicReader = new MusicReader("src/impl/Song1.txt");
-        try{musicReader.readSong();}
-        catch (IOException e){}
+        //try{musicReader.readSong();}
+        //catch (IOException e){}
         List<String> songFromClass = musicReader.getSong();
         List<String> songReal = new ArrayList<>();
 
