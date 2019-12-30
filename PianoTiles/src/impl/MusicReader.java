@@ -7,6 +7,7 @@ import java.io.IOException;
 import java.util.LinkedList;
 import java.util.List;
 
+
 public class MusicReader implements Reader{
 
     private List<String> song = new LinkedList<>();
