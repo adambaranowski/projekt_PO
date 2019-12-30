@@ -12,6 +12,9 @@ public class PlayingEngine {
         MusicReader musicReader = new MusicReader("src/impl/BACH_PRELUDE.txt");
         KeyMap keyMap = new KeyMap();
 
+
+
+
         List<String> song  = musicReader.getSong();
 
         MusicPlayer musicPlayer = new MusicPlayer();
