@@ -7,25 +7,13 @@ import java.util.List;
 
 
 public class PlayingEngine extends Thread{
-    //public static void main(String[] args) throws InterruptedException, UnsupportedAudioFileException, LineUnavailableException, IOException {
-
         MusicReader musicReader = new MusicReader("src/impl/BACH_PRELUDE.txt");
         KeyMap keyMap = new KeyMap();
         List<String> song  = musicReader.getSong();
         MusicPlayer musicPlayer = new MusicPlayer();
-/*
-        for (String line:
-                song
-             )
-        {
-            String[] sound = line.split("#");
-            musicPlayer.playSound( keyMap.getFileName(sound[1]), 40*Integer.parseInt(sound[2]));
-            System.out.println(keyMap.getFileName(sound[1]));
-
-        }
-*/
         public PlayingEngine() throws InterruptedException, UnsupportedAudioFileException, LineUnavailableException, IOException{
 }
+
 
         public void run(){
             for (String line:
@@ -47,6 +35,4 @@ public class PlayingEngine extends Thread{
                 System.out.println(keyMap.getFileName(sound[1]));
             }
         }
-    //}
-
 }

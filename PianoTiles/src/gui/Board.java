@@ -1,8 +1,6 @@
 package gui;
-
 import impl.ButtonsPosition;
 import impl.PlayingEngine;
-
 import javax.sound.sampled.LineUnavailableException;
 import javax.sound.sampled.UnsupportedAudioFileException;
 import javax.swing.*;
@@ -23,6 +21,7 @@ public class Board {
 
     public Board() throws IOException, InterruptedException, UnsupportedAudioFileException, LineUnavailableException {
 
+        /////ŁADOWANIE POCZĄTKOWEJ POZYCJI BUTTONÓW DO KLASY PRZECHWUJĄCEJ POZYCJE ZEBY MIEĆ X KTORY SIE NIE BEDZIE ZMIENIAŁ///////////
         Point key1Location = key1.getLocation();
         double key1x = key1Location.x;
         double key1y = key1Location.y;
@@ -40,15 +39,15 @@ public class Board {
         double key4y = key4Location.y;
 
 
-       /// ButtonsPosition buttonsPosition = new ButtonsPosition(key1x, key2x, key3x, key4x, key1y, key2y, key3y, key4y);
-
-        key1.setLocation((int)buttonsPosition1.getKey1x(),(int)buttonsPosition1.getKey1y());
-        key2.setLocation((int)buttonsPosition1.getKey2x(),(int)buttonsPosition1.getKey2y());
-        key3.setLocation((int)buttonsPosition1.getKey3x(),(int)buttonsPosition1.getKey3y());
-        key4.setLocation((int)buttonsPosition1.getKey4x(),(int)buttonsPosition1.getKey4y());
-
-
-
+        buttonsPosition1.setKey1x(key1x);
+        buttonsPosition1.setKey2x(key2x);
+        buttonsPosition1.setKey3x(key3x);
+        buttonsPosition1.setKey4x(key4x);
+        buttonsPosition1.setKey1y(key1y);
+        buttonsPosition1.setKey2y(key2y);
+        buttonsPosition1.setKey3y(key3y);
+        buttonsPosition1.setKey4y(key4y);
+        ////////////////////////////////////////////////
 
         Refresh();
         playingEngine.start();
@@ -63,31 +62,12 @@ public class Board {
 
     }
 
-
     public void Refresh(){
-
         key1.setLocation((int)buttonsPosition1.getKey1x(),(int)buttonsPosition1.getKey1y());
         key2.setLocation((int)buttonsPosition1.getKey2x(),(int)buttonsPosition1.getKey2y());
         key3.setLocation((int)buttonsPosition1.getKey3x(),(int)buttonsPosition1.getKey3y());
         key4.setLocation((int)buttonsPosition1.getKey4x(),(int)buttonsPosition1.getKey4y());
 
     }
-        /*Speedtxt.setText(Double.toString(car.getActualV()));
-        Modeltxt.setText(car.getModel());
-        Rejestrationtxt.setText(car.getRejestration());
-        Rmptxt.setText(Double.toString(car.getEng().getActualSpeed()));
-        Geartxt.setText(Integer.toString(car.getGb().getActualGear()));
-        GearboxNametxt.setText(car.getGb().getName());
-        EngineNametxt.setText(car.getEng().getName());
-        textJedzdoX.setText(String.valueOf(car.getXd()));
-        textJedzDoY.setText(String.valueOf(car.getYd()));
-        textAktX.setText(String.valueOf(car.getPos().getX()));
-        textAktY.setText(String.valueOf(car.getPos().getY()));
-        carIcon.setLocation((int)car.getPos().getX(), (int)car.getPos().getY());
-
-
-    }*/
-
-
 
 }
