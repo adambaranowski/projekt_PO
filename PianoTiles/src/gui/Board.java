@@ -3,8 +3,11 @@ package gui;
 import impl.ButtonsPosition;
 import impl.PlayingEngine;
 
+import javax.sound.sampled.LineUnavailableException;
+import javax.sound.sampled.UnsupportedAudioFileException;
 import javax.swing.*;
 import java.awt.*;
+import java.io.IOException;
 
 public class Board {
 
@@ -18,7 +21,7 @@ public class Board {
     PlayingEngine playingEngine = new PlayingEngine();
     ButtonsPosition buttonsPosition1 = new ButtonsPosition(0, 0,0,0,0,0,0,0);
 
-    public Board() {
+    public Board() throws IOException, InterruptedException, UnsupportedAudioFileException, LineUnavailableException {
 
         Point key1Location = key1.getLocation();
         double key1x = key1Location.x;
@@ -44,10 +47,14 @@ public class Board {
         key3.setLocation((int)buttonsPosition1.getKey3x(),(int)buttonsPosition1.getKey3y());
         key4.setLocation((int)buttonsPosition1.getKey4x(),(int)buttonsPosition1.getKey4y());
 
+
+
+
         Refresh();
+        playingEngine.start();
 
     }
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException, UnsupportedAudioFileException, LineUnavailableException, IOException {
         JFrame frame = new JFrame("Board");
         frame.setContentPane(new Board().TilesBoard);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
