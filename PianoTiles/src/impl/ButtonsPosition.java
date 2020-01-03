@@ -1,7 +1,5 @@
 package impl;
 
-import java.util.HashMap;
-
 public class ButtonsPosition {
 
     private double key1x;
@@ -14,6 +12,7 @@ public class ButtonsPosition {
     private double key3y;
     private double key4y;
 
+
     public ButtonsPosition(double key1x, double key2x, double key3x, double key4x, double key1y, double key2y, double key3y, double key4y) {
         this.key1x = key1x;
         this.key2x = key2x;
@@ -24,6 +23,19 @@ public class ButtonsPosition {
         this.key3y = key3y;
         this.key4y = key4y;
     }
+
+    public void UpdatePosition(int y1, int y2, int y3, int y4){
+        key1y = y1;
+        key2y = y2;
+        key3y = y3;
+        key4y = y4;
+        key1x = 2;
+        key2x = 77;
+        key3x = 152;
+        key4x = 227;
+    }
+
+
 
     public double getKey1x() {
         return key1x;
@@ -89,36 +101,5 @@ public class ButtonsPosition {
         this.key4y = key4y;
     }
 
-    /*
-    private HashMap<String, Integer> positionY = new HashMap<String, Integer>();
-    private HashMap<String, Integer> positionX = new HashMap<String, Integer>();
-
-    public HashMap<String, Integer> getPositionY() {
-        return positionY;
-    }
-
-    public void setPositionY(HashMap<String, Integer> positionY) {
-        this.positionY = positionY;
-    }
-
-    public HashMap<String, Integer> getPositionX() {
-        return positionX;
-    }
-
-    public void setPositionX(HashMap<String, Integer> positionX) {
-        this.positionX = positionX;
-    }
-
-    public ButtonsPosition(int key1x, int key2x, int key3x, int key4x, int key1y, int key2y, int key3y, int key4y){
-        positionY.put("key1", key1y);
-        positionY.put("key2", key2y);
-        positionY.put("key3", key3y);
-        positionY.put("key4", key4y);
-
-        positionX.put("key1", key1x);
-        positionX.put("key2", key2x);
-        positionX.put("key3", key3x);
-        positionX.put("key4", key4x);
-    }*/
 
 }
