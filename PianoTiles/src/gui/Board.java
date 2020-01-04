@@ -50,7 +50,6 @@ public class Board {
         double key4y = key4Location.y;
 
 
-
         buttonsPosition1.setKey1x(key1x);
         buttonsPosition1.setKey2x(key2x);
         buttonsPosition1.setKey3x(key3x);
@@ -75,91 +74,68 @@ public class Board {
         playingEngine.getGraphicMovementThread().start();
         Refresh();
 
-        key1.addKeyListener(new KeyAdapter() {
-            @Override
-            public void keyPressed(KeyEvent e) {
-                super.keyPressed(e);
-                System.out.println(buttonsPosition1.getKey1y());
-                if(buttonsPosition1.getKey1y()>200 && buttonsPosition1.getKey1y()<400)
-                {
-                if(e.getKeyCode()==68){
-                    //czy wcisniety d
+        ////////////////////////////
 
-                }
-                else{
-                    System.out.println("nie wcisniete d");
-
-                }
-            }
-                else{
-                System.out.println("zepsułes");
-                }
-            }
-        });
-        key2.addKeyListener(new KeyAdapter() {
-            @Override
-            public void keyPressed(KeyEvent e) {
-                super.keyPressed(e);
-                if (buttonsPosition1.getKey2y() > 200 && buttonsPosition1.getKey2y() < 400) {
-                    if (e.getKeyCode() == 71) {
-                        //czy wcisniety g
-
-                    } else {
-                        System.out.println("nie wcisniete g");
-
-                    }
-                }
-                else{
-
-                    System.out.println("zepsułes");
-                }
-            }
-
-        });
-        key3.addKeyListener(new KeyAdapter() {
-            @Override
-            public void keyPressed(KeyEvent e) {
-                super.keyPressed(e);
-                if (buttonsPosition1.getKey3y() > 200 && buttonsPosition1.getKey3y() < 400){
-                    if(e.getKeyCode()==74){
-                        //czy wcisniety j
-
-                    }
-                    else{
-                        System.out.println("nie wcisniete j");
-
-                    }
-                }
-                else{
-
-                    System.out.println("zepsułes");
-                }
-                }
+        KeyAdapter keyAdapter = new KeyAdapter() {
 
 
-        });
-        key4.addKeyListener(new KeyAdapter() {
             @Override
             public void keyPressed(KeyEvent e) {
                 super.keyPressed(e);
 
-                if (buttonsPosition1.getKey3y() > 200 && buttonsPosition1.getKey3y() < 400){
-                if(e.getKeyCode()==76){
-                    //czy wcisniety l
+                int keyCode = e.getKeyCode();
+
+                switch (keyCode) {
+                    case 68:
+                        if (buttonsPosition1.getKey1y() > 250 && buttonsPosition1.getKey1y() < 300) {
+                            System.out.println("trafione");
+                        } else {
+                            System.out.println("nietrafione");
+                        }
+                        break;
+
+                    case 71:
+                        if (buttonsPosition1.getKey2y() > 250 && buttonsPosition1.getKey2y() < 300) {
+                            System.out.println("trafione");
+                        } else {
+                            System.out.println("nietrafione");
+                        }
+                        break;
+
+                    case 74:
+                        if (buttonsPosition1.getKey3y() > 250 && buttonsPosition1.getKey3y() < 300) {
+                            System.out.println("trafione");
+                        } else {
+                            System.out.println("nietrafione");
+                        }
+                        break;
+
+                    case 76:
+                        if (buttonsPosition1.getKey4y() > 250 && buttonsPosition1.getKey4y() < 300) {
+                            System.out.println("trafione");
+                        } else {
+                            System.out.println("nietrafione");
+                        }
+                        break;
+
 
                 }
-                else{
-                    System.out.println("nie wcisniete l");
 
-                }
             }
-                else{
 
-                    System.out.println("zepsułes");
-                }
-            }
-        });
+        };
+        /////////////////////////////////////////////////
+
+
+        key1.addKeyListener(keyAdapter);
+
+        key2.addKeyListener(keyAdapter);
+
+        key3.addKeyListener(keyAdapter);
+
+        key4.addKeyListener(keyAdapter);
     }
+
 
     public static void main(String[] args) throws InterruptedException, UnsupportedAudioFileException, LineUnavailableException, IOException {
         JFrame frame = new JFrame("Board");

@@ -52,16 +52,16 @@ public class GraphicMovementThread extends Thread {
 
 
                     if (y1 > 300) {
-                        y1 = randomNums[0] * 50 - 200;
+                        y1 = randomNums[0] * (random.nextInt(50)+30) - 100;
                     }
                     if (y2 > 300) {
-                        y2 = randomNums[1] * 50 - 200;
+                        y2 = randomNums[1] * (random.nextInt(50)+30) - 200;
                     }
                     if (y3 > 300) {
-                        y3 = randomNums[2] * 50 - 200;
+                        y3 = randomNums[2] * (random.nextInt(50)+30)- 100;
                     }
                     if (y4 > 300) {
-                        y4 = randomNums[3] * 50 - 200;
+                        y4 = randomNums[3] * (random.nextInt(50)+30) - 100;
                     }
 
                 }
