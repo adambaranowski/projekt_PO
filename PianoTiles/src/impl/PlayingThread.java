@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class PlayingThread extends Thread{
-    List<String> song  = new ArrayList<>();
+    List<String> song;
     MusicPlayer musicPlayer = new MusicPlayer();
     KeyMap keyMap = new KeyMap();
 

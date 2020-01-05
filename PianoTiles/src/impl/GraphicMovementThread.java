@@ -1,12 +1,7 @@
 package impl;
-
-import javax.sound.sampled.LineUnavailableException;
-import javax.sound.sampled.UnsupportedAudioFileException;
-import java.io.IOException;
 import java.util.HashSet;
 import java.util.LinkedHashSet;
 import java.util.Random;
-import java.util.Set;
 
 public class GraphicMovementThread extends Thread {
     private int y1 = -200;
@@ -15,6 +10,11 @@ public class GraphicMovementThread extends Thread {
     private int y4 = -350;
     Random random = new Random();
 
+    private boolean ifCrossTheBoard = false;
+
+    public boolean getIfCrossTheBoard() {
+        return ifCrossTheBoard;
+    }
 
     HashSet<Integer> randomNumsSet = new LinkedHashSet<Integer>();
     int[] randomNums = new int[4];
@@ -24,9 +24,9 @@ public class GraphicMovementThread extends Thread {
 
             try {
 
-                //sleep(500);
+
                 while (true) {
-                    sleep(10);
+                    sleep(5);
                     y1 += 1;
                     y2 += 1;
                     y3 += 1;
@@ -46,31 +46,32 @@ public class GraphicMovementThread extends Thread {
                         randomNums[i]=x;
                         i++;
                     }
-                    //System.out.println(randomNumsSet.toString());
                     randomNumsSet.clear();
 
 
-
-                    if (y1 > 300) {
-                        y1 = randomNums[0] * (random.nextInt(50)+30) - 100;
+                    if (y1 > 300 || y2 > 300 || y3 > 300 || y4 > 300) {
+                        ifCrossTheBoard=true;
                     }
-                    if (y2 > 300) {
-                        y2 = randomNums[1] * (random.nextInt(50)+30) - 200;
-                    }
-                    if (y3 > 300) {
-                        y3 = randomNums[2] * (random.nextInt(50)+30)- 100;
-                    }
-                    if (y4 > 300) {
-                        y4 = randomNums[3] * (random.nextInt(50)+30) - 100;
-                    }
-
                 }
-
-
 
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
+    }
+
+    public void key1Up(){
+        y1 = randomNums[0] * (random.nextInt(50)+30) - 250;
+    }
+    public void key2Up(){
+        y2 = randomNums[1] * (random.nextInt(50)+30) - 300;
+    }
+
+    public void key3Up(){
+        y3 = randomNums[2] * (random.nextInt(50)+30)- 250;
+    }
+
+    public void key4Up(){
+        y4 = randomNums[3] * (random.nextInt(50)+30) - 350;
     }
 
     public int getY1() {

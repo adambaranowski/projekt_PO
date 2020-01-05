@@ -36,70 +36,28 @@ public class ButtonsPosition {
     }
 
 
-
     public double getKey1x() {
         return key1x;
     }
-
-    public void setKey1x(double key1x) {
-        this.key1x = key1x;
-    }
-
     public double getKey2x() {
         return key2x;
     }
-
-    public void setKey2x(double key2x) {
-        this.key2x = key2x;
-    }
-
     public double getKey3x() {
         return key3x;
     }
-
-    public void setKey3x(double key3x) {
-        this.key3x = key3x;
-    }
-
     public double getKey4x() {
         return key4x;
     }
-
-    public void setKey4x(double key4x) {
-        this.key4x = key4x;
-    }
-
     public double getKey1y() {
         return key1y;
     }
-
-    public void setKey1y(double key1y) {
-        this.key1y = key1y;
-    }
-
     public double getKey2y() {
         return key2y;
     }
-
-    public void setKey2y(double key2y) {
-        this.key2y = key2y;
-    }
-
     public double getKey3y() {
         return key3y;
     }
-
-    public void setKey3y(double key3y) {
-        this.key3y = key3y;
-    }
-
     public double getKey4y() {
         return key4y;
     }
-
-    public void setKey4y(double key4y) {
-        this.key4y = key4y;
-    }
-
-
 }

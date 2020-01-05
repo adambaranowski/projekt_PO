@@ -1,11 +1,19 @@
 package impl;
-
 import java.io.IOException;
 import java.util.List;
 
-public class PlayingEngine extends Thread{
+public class PlayingEngine extends Thread  {
         MusicReader musicReader = new MusicReader("src/impl/BACH_PRELUDE.txt");
         List<String> song  = musicReader.getSong();
+        private int points = 0;
+
+        public int getPoints() {
+                return points;
+        }
+
+        public void increasePoints() {
+                points +=1;
+        }
 
         public PlayingEngine() throws  IOException{
 }
