@@ -1,4 +1,0 @@
-Product{id=#2354#, productName=#buty#, weight=#123#, color=#green#, productCount=#2#}
-Product{id=#2334#, productName=#buty#, weight=#123#, color=#green#, productCount=#2#}
-Product{id=#1234#, productName=#buty#, weight=#123#, color=#green#, productCount=#2#}
-Product{id=#1284#, productName=#buty#, weight=#123#, color=#green#, productCount=#2#}
